@@ -1,205 +1,178 @@
-/* ==== Hero Section Carousel (Optimized) ==== */
-.heroCarousel {
-  height: 800px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+/* ==== Global Industrial Variables ==== */
+:root {
+    --primary-navy: #1a1e2e;
+    --accent-orange: #ff9800; /* Safety/Industrial Orange */
+    --steel-gray: #f4f7f6;
+    --text-dark: #2c3e50;
+    --border-color: rgba(255, 152, 0, 0.3);
 }
 
-/* Full height for carousel content */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-dark);
+    background-color: #fff;
+}
+
+/* ==== Hero Section (Mechanical Industrial Look) ==== */
+.heroCarousel {
+    height: 700px; /* Slightly reduced for better focus */
+    width: 100%;
+    background-color: #000;
+}
+
 .heroCarousel .carousel-inner,
 .heroCarousel .carousel-item {
-  height: 800px !important;
+    height: 700px !important;
 }
 
-/* Image Styling */
 .heroCarousel .carousel-item img {
-  height: 100% !important;
-  width: 100% !important;
-  object-fit: cover !important;
-  object-position: center;
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    filter: brightness(0.5) contrast(1.1); /* Industrial moody look */
 }
 
-/* Caption Overlay */
+/* Caption Overlay - Industrial Card Style */
 .heroCarousel .carousel-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 25px 35px;
-  border-radius: 12px;
-  color: #fff;
-  text-align: center;
-  z-index: 10;
-  max-width: 80%;
-}
-
-/* Headline & Paragraph - Fade Up */
-.heroCarousel .carousel-caption h1,
-.heroCarousel .carousel-caption p {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease-out forwards;
+    top: 55%;
+    background-color: rgba(26, 30, 46, 0.85); /* Navy background */
+    border-left: 5px solid var(--accent-orange);
+    text-align: left; /* Technical specs usually look better left-aligned */
+    padding: 40px;
+    border-radius: 0 15px 15px 0;
 }
 
 .heroCarousel .carousel-caption h1 {
-  animation-delay: 0.1s;
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .heroCarousel .carousel-caption p {
-  animation-delay: 0.4s;
-  font-size: 1.5rem;
-  font-weight: 400;
+    color: #cbd5e0;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
 }
 
-/* Animation Keyframes */
+/* Animation Fix: Sharp and Precise */
 @keyframes fadeInUp {
-  0% {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==== Navbar & Search (Precision Fix) ==== */
+.navbar-orange {
+    background-color: var(--primary-navy) !important;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#searchProduct {
+    display: block; /* Change from none to control via width */
+    width: 0;
+    padding: 0;
     opacity: 0;
-    transform: translate(-60%, -40%);
-  }
-  100% {
+    overflow: hidden;
+    border: 1px solid var(--accent-orange);
+    background: #fff;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 4px;
+}
+
+#searchProduct.expanded {
+    width: 250px;
+    padding: 5px 15px;
     opacity: 1;
-    transform: translate(-50%, -50%);
-  }
 }
 
-/* Hide controls */
-.heroCarousel .carousel-control-prev,
-.heroCarousel .carousel-control-next {
-  display: none !important;
+#search-icon {
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .heroCarousel {
-    height: 500px;
-  }
-
-  .heroCarousel .carousel-inner,
-  .heroCarousel .carousel-item {
-    height: 500px !important;
-  }
-
-  .heroCarousel .carousel-caption {
-    padding: 15px 20px;
-    max-width: 90%;
-  }
-
-  .heroCarousel .carousel-caption h1 {
-    font-size: 2rem;
-  }
-
-  .heroCarousel .carousel-caption p {
-    font-size: 1rem;
-  }
+#search-icon:hover {
+    color: var(--accent-orange);
 }
+
+/* ==== Modern Industrial Footer ==== */
 .modern-footer {
-  background-color: #313a63 !important;
-  color: #eee;
-  padding: 40px 0;
-}
-
-.footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 30px;
-  padding: 0 20px;
-}
-
-.footer-column {
-  flex: 1 1 250px;
+    background-color: var(--primary-navy) !important;
+    border-top: 5px solid var(--accent-orange);
+    color: #cbd5e0;
+    padding: 60px 0 20px 0;
 }
 
 .footer-column h4 {
-  margin-bottom: 15px;
-  font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    position: relative;
 }
 
-.footer-column ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.footer-column ul li {
-  margin-bottom: 10px;
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent-orange);
 }
 
 .footer-column ul li a {
-  color: #ddd;
-  text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.footer-column p {
-  margin-bottom: 10px;
+.footer-column ul li a:hover {
+    color: var(--accent-orange) !important;
+    transform: translateX(5px);
 }
 
 .social-icons i {
-  margin-right: 10px;
-  font-size: 20px;
-}
-/* Ensure search icon is right-aligned in the navbar */
-
-/* Ensure navbar uses flexbox to align elements */
-/* Ensure navbar uses flexbox to align elements */
-.navbar-collapse {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    background: rgba(255,255,255,0.1);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
 }
 
-/* Container for the search icon and input field */
-.search-container {
-  position: relative;
+.social-icons i:hover {
+    background: var(--accent-orange);
+    color: #fff;
 }
 
-/* Initially hide the search input field */
-#searchProduct {
-  display: none; /* Hidden by default */
-  width: 0;
-  opacity: 0;
-  transition: all 0.3s ease; /* Smooth transition for width and opacity */
+/* ==== Product Cards (Added for Index Content) ==== */
+.product-card {
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    background: #fff;
 }
 
-/* Expand the search input smoothly */
-#searchProduct.expanded {
-  display: block;
-  width: 200px; /* Adjust width as needed */
-  opacity: 1;
+.product-card:hover {
+    border-color: var(--accent-orange);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Style for the search icon */
-#search-icon {
-  font-size: 20px;
-  color: white;
-  transition: all 0.3s ease;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-/* Styling for search results */
-#search-results {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  max-height: 200px;
-  overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-
-/* Styling for search results */
-#search-results {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  max-height: 200px;
-  overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .heroCarousel, .heroCarousel .carousel-item { height: 450px !important; }
+    .heroCarousel .carousel-caption h1 { font-size: 1.8rem; }
+    .heroCarousel .carousel-caption { border-radius: 0; left: 0; transform: translate(0, -50%); width: 100%; }
 }
