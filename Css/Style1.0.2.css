@@ -1,16 +1,34 @@
+/* ==== Local Font Integration ==== */
+@font-face {
+    font-family: 'RobotoCustom';
+    src: url('../Fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoCustom';
+    src: url('../Fonts/Roboto-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 /* ==== Global Industrial Variables ==== */
 :root {
     --primary-navy: #1a1e2e;
-    --accent-orange: #ff9800; /* Safety/Industrial Orange */
+    --accent-orange: #ff9800; 
     --steel-gray: #f4f7f6;
     --text-dark: #2c3e50;
     --border-color: rgba(255, 152, 0, 0.3);
 }
 
+/* MERGED BODY RULE */
 body {
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-family: 'RobotoCustom', Arial, sans-serif; /* Your custom font is now the priority */
     color: var(--text-dark);
     background-color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 /* ==== Hero Section (Mechanical Industrial Look) ==== */
