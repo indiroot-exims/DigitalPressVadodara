@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div id="header-placeholder"></div>
+    <div id="header"></div>
 
     <main>
         <section id="home" class="heroCarousel d-flex align-items-center">
@@ -105,38 +105,12 @@
         </section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <div id="footer"></div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="Js/bootstrap.bundle.min.js" defer></script>
+  <script src="Js/SearchBox.js" defer></script>
+  <script src="Js/InjectLayout.js" defer></script>
 
-    <script>
-        // High-reliability fetch script for local files
-        async function loadLayout(id, url) {
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                const content = await response.text();
-                document.getElementById(id).innerHTML = content;
-            } catch (e) {
-                console.error(`Error loading ${url}:`, e);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            loadLayout('header-placeholder', 'header.html');
-            loadLayout('footer-placeholder', 'footer.html');
-        });
-
-        // Toggle Search functionality for the Header
-        function toggleSearchBox() {
-            const searchInput = document.getElementById('searchProduct');
-            if(searchInput) {
-                searchInput.classList.toggle('expanded');
-                if (searchInput.classList.contains('expanded')) {
-                    searchInput.focus();
-                }
-            }
-        }
-    </script>
+  
 </body>
 </html>
