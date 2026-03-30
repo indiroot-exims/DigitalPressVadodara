@@ -36,6 +36,10 @@ body {
     height: 700px; /* Slightly reduced for better focus */
     width: 100%;
     background-color: #000;
+   background-image: url('../Images/Vijayalakshmi Index.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .heroCarousel .carousel-inner,
